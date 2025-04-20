@@ -15,7 +15,7 @@ spec:
       containers:
       - name: flask
         image: flask-argo-demo:latest
-        imagePullPolicy: Never # Cambiar por tu imagen
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
         env:
