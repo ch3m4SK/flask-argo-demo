@@ -9,6 +9,3 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 5000
-    - prootocol: TCP
-      port: 8080
-      targetPort: 8000
