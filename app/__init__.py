@@ -33,7 +33,8 @@ def create_app(config_class='config.DevelopmentConfig'):
         return response
 
     # Inicia servidor de métricas en puerto 8000 (solo en producción)
-    start_http_server(8000)
+    if app.config.get('ENV') == 'production':
+        start_http_server(8000)
     
     # Inicializar extensiones
     db.init_app(app)
