@@ -16,3 +16,10 @@ def register_routes(app):
         db.session.add(new_task)
         db.session.commit()
         return jsonify(task_schema.dump(new_task)), 201
+    
+    @app.route('/tasks/<int:id>', methods=['DELETE'])
+    def delete_task(id):
+        task = Task.query.get_or_404(id)
+        db.session.delete(task)
+        db.session.commit()
+        return jsonify({'message': 'Task deleted successfully'}), 200
